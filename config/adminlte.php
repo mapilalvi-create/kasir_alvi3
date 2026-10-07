@@ -790,7 +790,25 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'dashboard',
+            'text' => 'jurusan',
+            'url' => 'admin/dashboard',
+            'icon' => 'bi bi-file-earmark',
+            'label_color' => 'success',
+        ],
+        [
+            'text' => 'jenjang',
+            'url' => 'admin/dashboard',
+            'icon' => 'bi bi-file-earmark',
+            'label_color' => 'success',
+        ],
+        [
+            'text' => 'kelas',
+            'url' => 'admin/dashboard',
+            'icon' => 'bi bi-file-earmark',
+            'label_color' => 'success',
+        ],
+        [
+            'text' => 'siswa',
             'url' => 'admin/dashboard',
             'icon' => 'bi bi-file-earmark',
             'label_color' => 'success',
