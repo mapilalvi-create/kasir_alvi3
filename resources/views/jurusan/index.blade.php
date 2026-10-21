@@ -1,21 +1,20 @@
 @extends('adminlte::page')
 
-@section('title', 'Data Siswa')
+@section('title', 'Data jurusan')
 
 @section('content_header')
-    <h1>Data Siswa</h1>
+    <h1>Data jurusan</h1>
 @stop
 
 @section('content')
     <div class="card">
         {{-- Header dengan Style AdminLTE (Title di kiri, Tools di kanan) --}}
         <div class="card-header">
-            <h3 class="card-title">Daftar Siswa</h3>
+            <h3 class="card-title">Daftar jurusan</h3>
             <div class="card-tools">
-                <a href="{{ route('siswa.cetak-pdf') }}" class="btn btn-danger btn-sm" target="_blank">
-                    <i class="fas fa-file-pdf"></i> Cetak PDF
+                
                 </a>
-                <a href="{{ route('siswa.create') }}" class="btn btn-primary btn-sm">
+                <a href="{{ route('jurusan.create') }}" class="btn btn-primary btn-sm">
                     <i class="fas fa-plus"></i> Tambah Siswa
                 </a>
             </div>
@@ -23,7 +22,7 @@
         
         {{-- Bagian Pencarian & Alert (Diberi padding agar rapi) --}}
         <div class="card-body pb-0">
-            <form action="{{ route('siswa.index') }}" method="GET" class="mb-3">
+            <form action="{{ route('jurusan.index') }}" method="GET" class="mb-3">
                 <div class="input-group">
                     <input type="text" name="search" class="form-control" placeholder="Cari nama Siswa atau NIS" value="{{ request('search') }}">
                     <div class="input-group-append">
@@ -50,32 +49,30 @@
                 <thead>
                     <tr>
                         <th style="width: 10px">No</th>
-                        <th>Nama Siswa</th>
-                        <th>NIS</th>
-                        <th>Jurusan</th> 
-                        <th>Kelas</th>   
-                        <th>Email</th>
-                        <th>Aksi</th>
+                        <th>Nama jurusan</th>
+                        <th>kode jurusan</th>
+                        <th>keterangan</th> 
+                        <th>status</th>   
+                        
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($siswas as $key => $siswa)
+                    @forelse ($jurusans as $key => $jurusan)
                     <tr>
-                        <td>{{ $siswas->firstItem() + $key }}</td>
-                        <td>{{ $siswa->nama_siswa }}</td>
-                        <td>{{ $siswa->nis }}</td>
-                        <td>{{ $siswa->jurusan }}</td> 
-                        <td>{{ $siswa->kelas }}</td>   
-                        <td>{{ $siswa->email }}</td>
+                        <td>{{ $jurusans->firstItem() + $key }}</td>
+                        <td>{{ $jurusan->nama_jurusan }}</td>
+                        <td>{{ $jurusan->kode_jurusan }}</td>
+                        <td>{{ $jurusan->keterangan }}</td>
+                        <td>{{ $jurusan->status }}</td> 
                         <td>
                             {{-- Tombol Aksi disinkronkan stylenya (btn-sm, icon only) --}}
-                            <a class="btn btn-info btn-sm" href="{{ route('siswa.show', $siswa->id) }}" title="Lihat">
+                            
                                 <i class="fas fa-eye"></i>
                             </a>
-                            <a href="{{ route('siswa.edit', $siswa->id) }}" class="btn btn-warning btn-sm" title="Edit">
+                        
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <form action="{{ route('siswa.destroy', $siswa->id) }}" method="POST" style="display: inline-block;">
+                            
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" title="Hapus">
@@ -94,7 +91,7 @@
         </div>
 
         <div class="card-footer clearfix">
-            {!! $siswas->appends(request()->query())->links('pagination::bootstrap-4') !!}
+            {!! $jurusans->appends(request()->query())->links('pagination::bootstrap-4') !!}
         </div>
     </div>
 @stop
