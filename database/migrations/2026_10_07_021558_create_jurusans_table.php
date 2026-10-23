@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('jurusans', function (Blueprint $table) {
             $table->id();
-            $table->string(' kode_jurusan')->unique();
-            $table->string(' nama_jurusan')->unique();
+            $table->string('kode_jurusan')->unique();
+            $table->string('nama_jurusan')->unique();
             $table->text('keterangan')->nullable();
             $table->enum('status', ['aktif', 'nonaktif'])->default('aktif');
             $table->timestamp('created_at')->nullable();

@@ -64,16 +64,16 @@
                         <td>
                             {{-- Tombol Aksi disinkronkan stylenya (btn-sm, icon only) --}}
                             
-                                <i class="fas fa-eye"></i>
+                                <i class="bi bi-eye"></i>
                             </a>
                         
-                                <i class="fas fa-edit"></i>
+                                <i class="bi bi-edit"></i>
                             </a>
                             
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" title="Hapus">
-                                    <i class="fas fa-trash"></i>
+                                    <i class="bi bi-trash"></i>
                                 </button>
                             </form>
                         </td>

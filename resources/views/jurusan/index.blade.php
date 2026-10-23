@@ -50,9 +50,10 @@
                     <tr>
                         <th style="width: 10px">No</th>
                         <th>Nama jurusan</th>
-                        <th>kode jurusan</th>
-                        <th>keterangan</th> 
-                        <th>status</th>   
+                        <th>keterangan</th>
+                        <th>status</th> 
+                        <th>aksi</th>   
+
                         
                     </tr>
                 </thead>
@@ -61,22 +62,21 @@
                     <tr>
                         <td>{{ $jurusans->firstItem() + $key }}</td>
                         <td>{{ $jurusan->nama_jurusan }}</td>
-                        <td>{{ $jurusan->kode_jurusan }}</td>
                         <td>{{ $jurusan->keterangan }}</td>
                         <td>{{ $jurusan->status }}</td> 
                         <td>
                             {{-- Tombol Aksi disinkronkan stylenya (btn-sm, icon only) --}}
-                            
-                                <i class="fas fa-eye"></i>
+                            <a class="btn btn-info btn-sm" href="{{ route('jurusan.show', $jurusan->id) }}" title="Lihat">
+                                <i class="bi bi-eye"></i>
                             </a>
-                        
-                                <i class="fas fa-edit"></i>
+                            <a href="{{ route('jurusan.edit', $jurusan->id) }}" class="btn btn-warning btn-sm" title="Edit">
+                                <i class="bi bi-pencil"></i>
                             </a>
-                            
+                            <form action="{{ route('jurusan.destroy', $jurusan->id) }}" method="POST" style="display: inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" title="Hapus">
-                                    <i class="fas fa-trash"></i>
+                                    <i class="bi bi-trash"></i>
                                 </button>
                             </form>
                         </td>

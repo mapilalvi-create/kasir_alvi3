@@ -784,20 +784,16 @@ return [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ],
-        [
-            'text' => 'blog',
-            'url' => 'admin/blog',
-            'can' => 'manage-blog',
-        ],
+
         [
             'text' => 'jurusan',
-            'url' => 'admin/dashboard',
+            'url' => 'jurusan',
             'icon' => 'bi bi-file-earmark',
             'label_color' => 'success',
         ],
         [
             'text' => 'jenjang',
-            'url' => 'admin/dashboard',
+            'url' => 'jenjang',
             'icon' => 'bi bi-file-earmark',
             'label_color' => 'success',
         ],
