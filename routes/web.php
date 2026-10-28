@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\jurusanController;
 use App\Http\Controllers\jenjangController;
 use App\Http\Controllers\kelasController;
-
+use App\Http\Controllers\siswaController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('jurusan', jurusanController::class);
     Route::resource('jenjang', jenjangController::class);
     Route::resource('kelas', kelasController::class);
+    Route::resource('siswa', siswaController::class);
     });
 
 require __DIR__.'/auth.php';

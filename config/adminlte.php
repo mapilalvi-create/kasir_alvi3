@@ -799,13 +799,13 @@ return [
         ],
         [
             'text' => 'kelas',
-            'url' => 'admin/dashboard',
+            'url' => 'kelas',
             'icon' => 'bi bi-file-earmark',
             'label_color' => 'success',
         ],
         [
             'text' => 'siswa',
-            'url' => 'admin/dashboard',
+            'url' => 'siswa',
             'icon' => 'bi bi-file-earmark',
             'label_color' => 'success',
         ],
